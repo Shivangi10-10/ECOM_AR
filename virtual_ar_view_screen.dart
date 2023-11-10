@@ -7,21 +7,21 @@ import 'package:shivangi/items.dart';
 
 class VirtualARViewScreen extends StatefulWidget
 {
-  String? clickedItemImageLink;
+ String? clickedItemImageLink;
 
 
-  VirtualARViewScreen({this.clickedItemImageLink,});
+ VirtualARViewScreen({this.clickedItemImageLink,});
 
 
-  @override
-  State<VirtualARViewScreen> createState() => _VirtualARViewScreenState();
+ @override
+ State<VirtualARViewScreen> createState() => _VirtualARViewScreenState();
 }
 
 
 class _VirtualARViewScreenState extends State<VirtualARViewScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return AugmentedRealityPlugin(widget.clickedItemImageLink.toString());
-  }
+ @override
+ Widget build(BuildContext context) {
+   return AugmentedRealityPlugin(widget.clickedItemImageLink.toString());
+ }
 }
 
