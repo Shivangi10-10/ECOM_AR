@@ -8,35 +8,37 @@ Future<void> main() async
 {
 
 
-  try{
-    WidgetsFlutterBinding.ensureInitialized();
-    await Firebase.initializeApp();
-  }
-  catch(errorMsg)
-  {
-    print("Error:" + errorMsg.toString());
+ try{
+   WidgetsFlutterBinding.ensureInitialized();
+   await Firebase.initializeApp();
+ }
+ catch(errorMsg)
+ {
+   print("Error:" + errorMsg.toString());
 
 
-  }
+ }
 
 
-  runApp(const MyApp());
+ runApp(const MyApp());
 }
 
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+ const MyApp({super.key});
 
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter EcomAR',
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-      ),
-      debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
-    );
-  }
+ @override
+ Widget build(BuildContext context) {
+   return MaterialApp(
+     title: 'Flutter EcomAR',
+     theme: ThemeData(
+       primarySwatch: Colors.purple,
+     ),
+     debugShowCheckedModeBanner: false,
+     home: const HomeScreen(),
+   );
+ }
 }
+
+
