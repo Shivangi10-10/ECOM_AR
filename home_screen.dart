@@ -1,9 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:palak/item_ui_design_widget.dart';
-import 'package:palak/items.dart';
-import 'package:palak/items_upload_screen.dart';
-import 'package:palak/login.dart';
+import 'package:bhavya/item_ui_design_widget.dart';
+import 'package:bhavya/items.dart';
+import 'package:bhavya/items_upload_screen.dart';
+import 'package:bhavya/login.dart';
+
+import 'cart_page.dart';
 
 
 class HomeScreen extends StatefulWidget
@@ -34,6 +36,10 @@ class _HomeScreenState extends State<HomeScreen>
         ),
         leading: IconButton(
             onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CartPage()),
+              );
 // Navigate to the cart screen
 //Navigator.push(context, MaterialPageRoute(builder: (context) => CartScreen()));
             },
