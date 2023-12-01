@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:bhavya/items.dart';
+import 'package:shivangi/items.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
 import 'package:provider/provider.dart';
 import 'cart_model.dart';
 import 'item_details_screen.dart';
-
 
 class CartPage extends StatefulWidget {
   @override
@@ -17,8 +16,12 @@ class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black, // Set the background color to black
       appBar: AppBar(
-        title: const Text('Cart'),
+        title: const Text(
+          'Cart',
+          style: TextStyle(color: Colors.white), // Set the text color to grey
+        ),
       ),
       body: Consumer<CartModel>(
         builder: (context, cartModel, child) {
@@ -26,10 +29,21 @@ class _CartPageState extends State<CartPage> {
             itemCount: cartModel.items.length,
             itemBuilder: (context, index) {
               return ListTile(
-                title: Text(cartModel.items[index].itemName ?? 'Unknown name', overflow: TextOverflow.ellipsis),
-                subtitle: Text(cartModel.items[index].itemDescription ?? 'Unknown name', overflow: TextOverflow.ellipsis),
+                title: Text(
+                  cartModel.items[index].itemName ?? 'Unknown name',
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(color: Colors.grey), // Set the text color to grey
+                ),
+                subtitle: Text(
+                  cartModel.items[index].itemDescription ?? 'Unknown name',
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(color: Colors.grey), // Set the text color to grey
+                ),
                 trailing: IconButton(
-                  icon: const Icon(Icons.remove_shopping_cart),
+                  icon: const Icon(
+                    Icons.remove_shopping_cart,
+                    color: Colors.grey, // Set the icon color to grey
+                  ),
                   onPressed: () {
                     cartModel.removeItem(cartModel.items[index]);
                   },
@@ -47,7 +61,6 @@ class _CartPageState extends State<CartPage> {
           );
         },
       ),
-
       floatingActionButton: FloatingActionButton.extended(
         extendedPadding: EdgeInsets.all(8),
         backgroundColor: Colors.pinkAccent,
@@ -72,7 +85,10 @@ class _CartPageState extends State<CartPage> {
             // Add your logic for trying multiple items virtually here
           }
         },
-        label: const Text("Try Multiple"),
+        label: const Text(
+          "Try Multiple",
+          style: TextStyle(color: Colors.white), // Set the text color to grey
+        ),
         icon: const Icon(
           Icons.mobile_screen_share_rounded,
           color: Colors.white,
