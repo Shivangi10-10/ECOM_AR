@@ -1,37 +1,36 @@
+import 'package:bhavya/signup.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:palak/home_screen.dart';
+import 'package:bhavya/home_screen.dart';
 
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
-
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   String _errorMessage = "";
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
         backgroundColor: Colors.black,
-        appBar: AppBar(
-          backgroundColor: Colors.black,
-          title: const Text(
-           "LOGIN PAGE",
-             style: TextStyle(
-             fontSize: 18,
-             letterSpacing: 2,
-             fontWeight: FontWeight.bold,
-              ),
-             ),
-
+        title: const Text(
+          "LOGIN PAGE",
+          style: TextStyle(
+            fontSize: 18,
+            letterSpacing: 2,
+            fontWeight: FontWeight.bold,
+          ),
         ),
+      ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
@@ -39,29 +38,30 @@ class _LoginPageState extends State<LoginPage> {
           children: [
             Divider(
               color: Colors.white70,
-              thickness: 2,),
-
-           ListTile(
+              thickness: 2,
+            ),
+            ListTile(
               leading: const Icon(
-              Icons.person_pin_rounded,
-              color: Colors.white,
+                Icons.person_pin_rounded,
+                color: Colors.white,
               ),
-                title: SizedBox(
-                 width: 250,
-                  child:TextField(
-                    style: const TextStyle(color: Colors.grey),
-                    controller: _usernameController,
-                    decoration: InputDecoration(
-                      hintText: "user name",
-                      hintStyle: TextStyle(color: Colors.grey),
-                       border: InputBorder.none,
+              title: SizedBox(
+                width: 250,
+                child: TextField(
+                  style: const TextStyle(color: Colors.grey),
+                  controller: _usernameController,
+                  decoration: InputDecoration(
+                    hintText: "user name",
+                    hintStyle: TextStyle(color: Colors.grey),
+                    border: InputBorder.none,
+                  ),
+                ),
               ),
             ),
-                ),
-           ),
             Divider(
               color: Colors.white70,
-              thickness: 2,), // Add a divider between username and password
+              thickness: 2,
+            ),
             ListTile(
               leading: const Icon(
                 Icons.password,
@@ -69,7 +69,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               title: SizedBox(
                 width: 250,
-                child:TextField(
+                child: TextField(
                   style: const TextStyle(color: Colors.grey),
                   controller: _passwordController,
                   obscureText: true,
@@ -83,12 +83,28 @@ class _LoginPageState extends State<LoginPage> {
             ),
             Divider(
               color: Colors.white70,
-              thickness: 2,),
-
+              thickness: 2,
+            ),
             SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: _login,
               child: Text('Login'),
+            ),
+            SizedBox(height: 16.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Don't have an account?",
+                  style: TextStyle(color: Colors.white),
+                ),
+                SizedBox(width: 8.0),
+                ElevatedButton(
+                  onPressed: _navigateToSignUp,
+                  style: ElevatedButton.styleFrom(primary: Colors.black), // Change button color to black
+                  child: Text('Sign Up'),
+                ),
+              ],
             ),
             SizedBox(height: 16.0),
             Text(
@@ -113,30 +129,34 @@ class _LoginPageState extends State<LoginPage> {
       return;
     }
 
-    // Add more complex validation logic if needed
-
-    // If validation passes, show a welcome message
     _showWelcomeDialog(username);
   }
 
   void _showWelcomeDialog(String username) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Welcome!'),
-          content: Text('Welcome, $username!'),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (c)=>HomeScreen()));
-              },
-              child: Text('OK'),
-            ),
-          ],
-        );
-      },
-        );
 
+                FirebaseAuth.instance.signInWithEmailAndPassword(
+                    email: _usernameController.text,
+                    password: _passwordController.text).then((value) {
+                  print("Logged in successfully");
+
+                  // Navigate to the homescreen
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomeScreen())
+                  );
+                }).onError((error, stackTrace) {
+                  print("error ${error.toString()}");
+                });
+      }
+
+
+
+  void _navigateToSignUp() {
+    // Navigate to the SignUp page
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => SignUp()),
+    );
   }
 }
+
