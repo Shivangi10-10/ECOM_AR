@@ -13,13 +13,20 @@ also compete more effectively in the dynamic online marketplace, fostering susta
 success.
 ## Software and Hardware Requirements
 I. Software requirements:
+
 ❖ Android Studio
+
 ❖ Plugins: image_picker, fluttertoast, augmented_reality_plugin, firebase_core, http, 
 firebase_storage, cloud_firestore, flutter_add_to_cart_button, provider
+
 ❖ API: remove.bg
+
 ❖ Firebase
+
 II. Hardware requirements
+
 ❖ PC/System
+
 ❖ Smartphone (Android OS)
 ## Architecture of the project
 The Android Studio-based Flutter project employs Dart language and Firebase for authentication and 
