@@ -41,43 +41,54 @@ seamlessly integrates Firebase for authentication and database management, exter
 functionalities, and a variety of Flutter plugins to enrich the user experience. 
 The architecture of the Flutter project using Android Studio, Dart, and Firebase, along with various 
 plugins and APIs, can be outlined as follows:
+
 ❖ User Authentication and Database:
 Firebase Authentication handles user login and registration. Upon successful authentication, 
 Firebase Firestore is used as the NoSQL database to store user data, item details, and cart 
 information.
+
 ❖ UI Components:
 The project's UI is built using Flutter widgets. The login page serves as the entry point, followed 
 by the main page displaying items available for purchase. Each item is represented by a widget, 
 and the item details page is dynamically generated based on the selected item.
+
 ❖ Item Information and Augmented Reality:
 The Flutter plugins image_picker facilitates image selection for item uploads, and remove_bg API 
 removes the image background for a cleaner presentation. The augmented_reality_plugin is 
 integrated to enable users to try items virtually.
+
 ❖ Cart Management:
 The flutter_add_to_cart_button plugin manages cart functionalities. Users can add items to the cart 
 directly from the item details page. The cart page displays the selected items, and users can 
 proceed to payment.
+
 ❖ Payment Integration:
 Payment functionality is facilitated through external APIs or plugins, not explicitly mentioned. 
 Options like Stripe, PayPal, or other payment gateways can be integrated for a secure and 
 seamless payment experience.
+
 ❖ Provider for State Management:
 The provider plugin is used for state management. It helps in efficiently managing the state of the 
 application, ensuring data consistency across different screens and widgets.
+
 ❖ Toast Notifications:
 The fluttertoast plugin provides toast notifications, alerting users of successful actions or errors 
 during the application's execution.
+
 ❖ Project Structure:
 The project follows a modular structure with organized folders for screens, models, services, and 
 plugins. Firebase-related functionalities, such as authentication and database interactions, are 
 encapsulated in dedicated services.
+
 ❖ MVVM Architecture:
 The project could adopt the Model-View-ViewModel (MVVM) architecture, separating business 
 logic from the UI. This enhances maintainability, testability, and scalability.
+
 ❖ Seller-Side Item Upload:
 Seller-side item uploads are facilitated through a dedicated screen where sellers can input item 
 details. The cloud_firestore plugin ensures seamless integration with Firebase to store the newly 
 added item information in the database.
+
 ❖ Integration with External APIs:
 The project interacts with external APIs such as remove_bg for image background removal. API 
-calls are handled through Dart's asynchronous programming using Future and async/await
+calls are handled through Dart's asynchronous programming using Future and async/await.
