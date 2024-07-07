@@ -69,4 +69,4 @@ flutter run
 
 **Documentation**
 
-A complete project report for the system with use case diagram, web flow, relational diagram, etc can be found here: [ECOM_AR | Project Report](https://github.com/Shivangi10-10/ECOM_AR/blob/main/ECOM_AR.pdf).
+A complete project report for the system with use case diagram, app flow, etc can be found here: [ECOM_AR | Project Report](https://github.com/Shivangi10-10/ECOM_AR/blob/main/ECOM_AR.pdf).
