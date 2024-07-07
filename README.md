@@ -28,6 +28,10 @@ Many small businesses struggle with limited online visibility, hindering their g
 - **APIs**: remove.bg
 
 
+**Demo Video**
+
+Explore ECOM_AR with this [product tour video](https://drive.google.com/file/d/1J8bjdBoAwS0ubXrLFTiT3UnqbBrrPtqg/view?usp=drive_link).
+
 ## Installation/Environment Setup
 
 Clone this repository:
