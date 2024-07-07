@@ -30,9 +30,8 @@ Many small businesses struggle with limited online visibility, hindering their g
 
 **Demo Video**
 
-Explore ECOM_AR with this <a href="https://drive.google.com/file/d/1J8bjdBoAwS0ubXrLFTiT3UnqbBrrPtqg/preview" target="_blank">product tour video</a>. 
+Explore ECOM_AR with this [product tour video](https://drive.google.com/file/d/1J8bjdBoAwS0ubXrLFTiT3UnqbBrrPtqg/view?usp=drive_link).
 
-<iframe src="https://drive.google.com/file/d/1J8bjdBoAwS0ubXrLFTiT3UnqbBrrPtqg/preview" width="640" height="480" allow="autoplay"></iframe>
 
 
 ## Installation/Environment Setup
